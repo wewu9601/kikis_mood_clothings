@@ -1,5 +1,5 @@
-# python-html-css
-kiki's mood closet 
+# kiki's mood closet 
+
 
 This version keeps the HTML and CSS interface, but uses Python as the main programming language.
 
