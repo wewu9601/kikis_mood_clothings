@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiki's Mood Closet: Pixel Edition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <!-- PyScript lets Python run in the browser. -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.3.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2026.3.1/core.js"></script>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app" class="kiki-app">
+    <header class="kiki-top">
+      <div class="pixel-chip">
+        <span id="themeEmoji" style="font-size:18px;line-height:1">🎓</span>
+        <span id="themeName">GRADUATION DAY</span>
+      </div>
+
+      <div id="themeIcons" class="theme-icons"></div>
+
+      <div class="pixel-chip score">
+        <span>SCORE</span>
+        <strong id="scoreVal">0</strong>
+        <span id="scoreLabel">OOPS</span>
+      </div>
+    </header>
+
+    <main class="kiki-grid">
+      <section class="kiki-stage">
+        <div class="stage-platform">
+          <div class="sprite-wrap">
+            <div id="kikiSprite" class="kiki-sprite" aria-label="Kiki pixel character"></div>
+          </div>
+          <div class="platform-shadow"></div>
+        </div>
+
+        <div class="kiki-name">★ KIKI ★</div>
+        <div id="flash" class="flash" hidden></div>
+      </section>
+
+      <aside class="kiki-panel">
+        <h2 class="panel-title">CLOSET</h2>
+        <ul id="slotList" class="slot-list"></ul>
+
+        <button id="saveBtn" class="pixel-btn save-btn">♥ SAVE OUTFIT</button>
+
+        <div id="savedStrip" class="saved-strip" hidden>
+          <div class="saved-label">SAVED</div>
+          <div id="savedRow" class="saved-row"></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="kiki-controls">
+      <span class="ctrl"><kbd>↑↓</kbd> SLOT</span>
+      <span class="ctrl"><kbd>←→</kbd> CHANGE</span>
+      <span class="ctrl"><kbd>T</kbd> THEME</span>
+      <span class="ctrl"><kbd>S</kbd> SAVE</span>
+    </footer>
+  </div>
+
+  <!-- Main project logic is Python, not JavaScript. -->
+  <script type="py" src="./main.py" config="./pyscript.json"></script>
+</body>
+</html>
